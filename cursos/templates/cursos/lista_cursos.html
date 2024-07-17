@@ -1,0 +1,45 @@
+<!-- templates/cursos/lista_cursos.html -->
+{% extends "base_generic.html" %}
+
+{% extends 'base.html' %}
+
+{% block title %}Lista de Cursos - Plataforma de Gestión de Cursos{% endblock %}
+
+{% block content %}
+    <h1>Lista de Cursos</h1>
+    <ul class="curso-lista">
+        {% for curso in cursos %}
+        <li>
+            <div class="curso-item">
+                <h2><a href="{% url 'detalle_curso' curso.id %}">{{ curso.titulo }}</a></h2>
+                <p>{{ curso.descripcion }}</p>
+                <p><strong>Categoría:</strong> {{ curso.categoria }}</p>
+                <p><strong>Modalidad:</strong> {{ curso.get_modalidad_display }}</p>
+                <p><strong>Tipo:</strong> {{ curso.get_tipo_display }}</p>
+                <p><strong>Fecha:</strong> {{ curso.fecha }}</p>
+                <p><strong>Hora:</strong> {{ curso.hora }}</p>
+                <p><strong>Duración:</strong> {{ curso.duracion }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content %}
+  <h1>Lista de Cursos</h1>
+  <form method="get">
+    {{ form.as_p }}
+    <button type="submit">Filtrar</button>
+  </form>
+  <ul>
+    {% for curso in cursos %}
+      <li>
+        <h2><a href="{% url 'detalle_curso' curso.pk %}">{{ curso.titulo }}</a></h2>
+        <p>{{ curso.descripcion }}</p>
+        <p>Categoría: {{ curso.get_categoria_display }}</p>
+        <p>Modalidad: {{ curso.get_modalidad_display }}</p>
+        <p>Tipo: {{ curso.get_tipo_display }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

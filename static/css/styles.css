@@ -1,0 +1,53 @@
+/* cursos/static/css/styles.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la lista de cursos */
+.curso-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.curso-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.curso-item h2 {
+    margin-top: 0;
+}
+
+.curso-item p {
+    margin-bottom: 5px;
+}
+
+/* Estilos para el encabezado y pie de página */
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,30 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Plataforma de Gestión de Cursos{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'lista_cursos' %}">Lista de Cursos</a></li>
+                <li><a href="{% url 'lista_cursos' %}">Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- Contenido específico de cada página se reemplazará aquí -->
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Pie de página -->
+    </footer>
+    
+</body>
+</html>

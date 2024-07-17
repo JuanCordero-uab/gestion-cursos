@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Progreso de los Estudiantes en {{ curso.titulo }}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Lección</th>
+        <th>Completada</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in progreso %}
+        <tr>
+          <td>{{ p.usuario.username }}</td>
+          <td>{{ p.leccion.titulo }}</td>
+          <td>{{ 'Sí' if p.completada else 'No' }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
